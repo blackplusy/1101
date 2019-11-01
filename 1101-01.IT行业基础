@@ -54,6 +54,44 @@ https://s.taobao.com/search?q=lv&imgfile=&js=1&stats_click=search_radio_all%3A1&
 
 ​				500        5开头服务端有问题
 
+2.抓包
+a.常用抓包工具
+    F12
+    httpwatch   
+    fiddler
+    wireshark
+    burpsuite
+b.抓包原理
+    中间人原理
+c.实战案例
+d.抓包数据
+    基础数据
+        文件名
+        状态码
+        文件类型
+        参考页面
+        文件大小
+        加载时间
+    请求头信息
+        请求地址
+        请求方法
+        可以解析的文件类型
+        除文外的文件压缩方式
+        语言
+        cookie
+        客户端信息
+    请求体信息
+    响应头信息
+        状态码
+        web服务器软件版本
+        时间
+    响应体信息
+        http://www3.ecmoban.com/index.php
 
 
-​					
+
+
+
+
+
+
