@@ -1,59 +1,32 @@
 1.我们是怎样访问网站？
 
 a.打开浏览器
-
-​  IE              	QQ  360 搜狗 百度 
-
+​    IE              	QQ  360 搜狗 百度 
 ​	chrome        开发
-
 ​	firefox          测试
-
 ​	safari
-
 b.输入地址url
-
 ​	URL:统一资源定位器
-
 ​	http://sports.sina.com.cn/slamdunk/live.shtml?id=2019103126
-
 ​	b1.协议
-
-​			http协议(超文本传输协议)
-
-​			超文本(富文本)：声音、图像、视频
-
-​			普通文本：文字等等	
-
-​			规定了数据在网络中先传输什么，后传输什么，怎样传输
-
-​			HTTP协议特点：无状态(彼此不记录过去的行为)
-
-​			HTTP协议的请求：
-
-​				get     我要什么，请求的信息显示在请求头上，相对不安全，主要用于浏览
-
-https://s.taobao.com/search?q=zara&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306
-
-https://s.taobao.com/search?q=lv&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20191101&ie=utf8
-
-​				post    我给什么，请求的信息显示在请求体内，相对安全，主要用于提交
-
-​			cookie&session
-
-​				cookie  存放在客户端，存放验证信息，访问记录 定投广告
-
-​				session 存放在服务端，30分钟超时
-
-​			状态码
-
-​				200        2开头请求成功
-
-​				302        3开头移动或者缓存、重定向
-
-​				404        4开头客户端请求有问题
-
-​				500        5开头服务端有问题
-
+​		http协议(超文本传输协议)
+​		超文本(富文本)：声音、图像、视频
+​		普通文本：文字等等	
+​		规定了数据在网络中先传输什么，后传输什么，怎样传输
+​		HTTP协议特点：无状态(彼此不记录过去的行为)
+​		HTTP协议的请求：
+​			get     我要什么，请求的信息显示在请求头上，相对不安全，主要用于浏览
+            https://s.taobao.com/search?q=zara
+            https://s.taobao.com/search?q=lv
+​			post    我给什么，请求的信息显示在请求体内，相对安全，主要用于提交
+​		cookie&session
+​			cookie  存放在客户端，存放验证信息，访问记录 定投广告
+​			session 存放在服务端，30分钟超时
+​		状态码
+​			200        2开头请求成功
+​			302        3开头移动或者缓存、重定向
+​			404        4开头客户端请求有问题
+​			500        5开头服务端有问题
 2.抓包
 a.常用抓包工具
     F12
@@ -87,6 +60,8 @@ d.抓包数据
         时间
     响应体信息
         http://www3.ecmoban.com/index.php
+3.练习
+    https://koudashijie.com/students?_cc=TownShirtDesk
 
 
 
