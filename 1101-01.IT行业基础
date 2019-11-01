@@ -120,7 +120,42 @@ d.抓包数据
                 mongodb   大数据、爬虫
                 redis     微博 
                 cassandra facebook
-
+6.集成环境
+    xampp
+        x:任意操作系统
+        a:apache
+        m:mysql
+        p:php
+        p:perl
+    wamp
+        w:windows
+    phpstudy
+7.phpstudy简介
+    a.文件夹简介
+        apache
+            bin  存放命令
+            conf 存放配置文件
+            logs 存放日志
+        mysql
+            bin  存放mysql命令
+            data 存放数据
+            lib  存放库文件
+        WWW 项目所在文件夹
+    b.服务和端口
+        apache
+            进程 httpd
+            端口 80
+            win+r--cmd--tasklist | find "httpd"  查看apache进程
+                tasklist 查看系统所有进程
+                |        管道，前面的输出做为后面的输入
+                find     搜索
+            win+r--cmd--netstat -an | find "80"
+                netstat -an 查看电脑中所有端口
+        mysql
+            进程 mysqld
+            端口 3306
+            tasklist | find "mysqld"
+            netstat -an | find "3306"
 
 
 
