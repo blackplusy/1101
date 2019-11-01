@@ -62,8 +62,64 @@ d.抓包数据
         http://www3.ecmoban.com/index.php
 3.练习
     https://koudashijie.com/students?_cc=TownShirtDesk
-
-
+4.常见的软件架构
+    陌陌   c/s
+    微信   c/s  b/s
+    LOL    c/s
+    QQ     c/s  
+    微博   c/s b/s
+    淘宝   c/s b/s
+    美颜   c/s b/s
+    高德   c/s b/s
+    快播   c/s b/s
+    office 单机、c/s
+    单机软件
+        不需要网络就可以应用的软件
+    b/s架构软件
+        通过浏览器来访问的应用
+        b:浏览器
+        s:服务器
+            性能非常牛逼的电脑
+    c/s架构软件
+        c:客户端
+            pc端  笔记本电脑  台式电脑 服务器
+            移动端  手机 ipad 智能终端
+        s:服务器
+5.b/s架构的后端
+    前端：
+        html  标记性  静态页面(在服务器上什么样子在页面上什么样子)
+        css   层叠样式表   页面样式美化
+        js    javascript  动态页面(动画、交互)
+        ui    美工
+    后端：
+        操作系统
+            unix   
+                mac os  ios  
+            linux
+                redhat centos
+                ubuntu suse
+                kali   backtrack
+            windows
+                server  
+                    server 03  08  12  16
+                desktop
+                    win7 winxp win10 
+        web服务器
+            apache  不支持java
+            nginx   轻量级、负载均衡、反向代理
+            iis     微软
+            tomcat   java
+        数据库服务器
+            关系型数据库
+                informix   IBM+HP  小机  军、政、运、银
+                db2        IBM     军、政、运、银   (3000w+6000w)*4
+                oracle     甲骨文   中大型
+                mysql      甲骨文   互联网
+                sqlserver  微软     传统
+            非关系型
+                mongodb   大数据、爬虫
+                redis     微博 
+                cassandra facebook
 
 
 
