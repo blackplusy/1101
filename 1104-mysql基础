@@ -1,0 +1,77 @@
+1.常见的数据库
+	关系型
+		oracle
+		mysql
+		sqlserver
+	非关系型
+		mongodb
+		redis
+2.集成软件
+	xmapp
+	wamp
+	phpstudy
+3.phpstudy
+	apache   web服务器
+	mysql    数据库服务器
+	WWW      项目所在位置
+4.服务和端口检查
+	apache的主服务   httpd
+	mysql的主服务    mysqld
+	win+r--cmd--
+		tasklist | find "httpd"     检查apache进程是否正常运行
+		tasklist | find "mysqld"    检查mysqld进程是否正常运行
+	apache的端口     80
+	mysqld的端口     3306
+	win+r--cmd--
+		netstat -an | find "80"
+		netstat -an | find "3306"
+	补充：
+		0.0.0.0  任意IP地址
+		127.0.0.1==localhost==电脑本机
+	测试apache：
+		浏览器输入127.0.0.1或者localhost
+
+============================================
+1.mysql的服务
+	mysql 文件夹
+		bin 文件夹  存放命令
+	a.mysql的主服务
+		mysqld
+	b.mysql的客户端服务
+		mysql
+2.登陆mysql数据库
+	a.登陆的命令(命令提示符)
+		win+r--cmd--
+		mysql
+			没有设置密码时候登陆方式
+		mysql -u root -p
+			管理员登陆本地数据库
+			-u 用户名
+			-p 输入密码
+		mysql -h 127.0.0.1 -u root -p
+			-h  连接数据库的IP
+	b.登陆的方式
+		b1.进入到命令所在文件夹
+			d:                        切换到目标磁盘
+			cd phpStudy\MySQL\bin     文件夹切换到目标文件夹
+		b2.设置环境变量
+			计算机--属性--高级--环境变量--系统变量-Path中添加mysql的bin文件夹
+			;D:\phpStudy\MySQL\bin
+			确定--确定--确定
+3.基础命令
+	登陆数据库之后进行操作
+	数据库分为2部分:数据库软件、数据库数据
+	mysql数据库是由表组成
+	mysql表由数据组成
+		show databases;   查看当前有哪些数据库？
+		select database();查看当前数据库的名字
+		补充:null 代表没有选择数据库
+		use mysql;        当前数据库切换为mysql
+		show tables;      查看当前数据库中有哪些表
+		select * from user; 查看 user表中的所有数据
+
+
+
+
+
+
