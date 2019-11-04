@@ -32,6 +32,12 @@
 		浏览器输入127.0.0.1或者localhost
 
 ============================================
+网店后台
+http://192.168.6.117/ecshop1/admin/
+admin
+admin888
+网店前台
+http://192.168.6.117/ecshop1
 1.mysql的服务
 	mysql 文件夹
 		bin 文件夹  存放命令
@@ -69,6 +75,46 @@
 		use mysql;        当前数据库切换为mysql
 		show tables;      查看当前数据库中有哪些表
 		select * from user; 查看 user表中的所有数据
+4.表
+	类似于表格，有行，有列，有数据，有表名
+	a.数据类型
+		字符  'abc'  '123' char  varchar
+		数字   123   1.32  int
+		日期  2019-11-04   date
+		注意:char和varchar的区别
+		char    定长  char(10)    速度快
+		varchar 变长  varchar(10) 速度慢
+	b.表结构的创建
+		语法：create table 表(
+				列名(表头、字段) 数据类型，
+				列名           数据类型,
+				。。。
+			);
+		需求:创建商品表(goods),商品名称(name),字符类型，价格(price),数字类型，出厂日期(ddate),日期类型
+		create table goods(
+			name char(20),
+			price int,
+			ddate date
+		);
+	c.查看表结构
+		desc 表名
+		需求:查看goods表的表结构
+		desc goods;
+	d.表结构的修改
+		增加列
+			需求:商品表中增加uid列，数字类型
+			alter table goods add uid int;
+		修改列
+			需求:商品表中uid列修改为字符类型
+			alter table goods modify uid char(10);
+		删除列
+			需求:商品表中删除uid列
+			alter table goods drop column uid;
+
+
+
+
+
 
 
 
