@@ -177,7 +177,63 @@ http://192.168.6.117/ecshop1
 			语法:truncate table 表;
 			需求:删除emp表中所有数据
 				truncate table emp;
-				
+7.SQL(结构化查询语言)
+	DML  数据库操作语言  insert update delete
+	DDL  数据库定义语言  create alter truncate
+	DCL  数据库控制语言  grant  revoke
+	DQL  数据库查询语言  select
+8.数据的查询
+	a.查询的分类
+		简单查询
+		多表查询
+		分组查询
+		子查询
+	b.简单查询
+		查询指定列
+		查询指定行
+		查询指定行的列
+		查询所有数据
+		语法:select 列 from  表 where 条件;
+		注意：select后面，from前面是和列相关的内容，where条件是和行相关的
+		http://book.ecmoban.com/images/db.htm
+		查询ecs_goods表中所有商品的名称
+		select goods_name from ecs_goods;
+		查询ecs_goods表中商品名称是KD876的所有信息
+		select * from ecs_goods where goods_name='KD876';
+		查询ecs_goods表中商品名称是KD876的本店售价
+		select shop_price from ecs_goods where goods_name='KD876';
+		查询ecs_goods表中所有数据
+		select * from ecs_goods ;
+	c.where条件
+		c1.比较运算符
+			>
+			<
+			=
+			>=
+			<=
+			!=
+			<>
+			需求:查询ecs_goods表中本店售价高于2000的所有商品名称和本店售价
+			select goods_name,shop_price from ecs_goods where shop_price >2000;
+			需求:查询ecs_goods表中商品名称不是KD876的所有信息
+			select * from ecs_goods where goods_name<>'KD876';
+		c2.关系
+			and   同时满足
+			or    满足一个条件即可
+			not   不满足条件
+			需求:查询ecs_goods表中本店售价低于3000并且名字是kouniqiwa的所有信息
+			select * from ecs_goods where shop_price<3000 and goods_name='kouniqiwa';
+			需求:查询ecs_goods表中商品名称是KD876的或者诺基亚的所有信息
+			select * from ecs_goods where goods_name='KD876' or goods_name='诺基亚';
+			
+
+
+
+
+
+
+
+
 
 
 
