@@ -110,6 +110,36 @@ http://192.168.6.117/ecshop1
 		删除列
 			需求:商品表中删除uid列
 			alter table goods drop column uid;
+	e.表结构的删除
+		语法:drop table 表;
+		需求:删除goods表
+		drop table goods;
+	f.约束
+		主键：列中的数据是唯一的，每张表中只能有一个主键，不能为空
+		唯一：列中的数据是唯一的，每张表中可以有多个唯一约束，可以为空，作为主键约束的补充
+		非空：列中的数据不能为空
+		检查：列中的数据是否满足条件
+		外键：列中的数据依赖于另外一张表中的列的数据
+5.ecshop网店项目部署
+	开发语言：		php
+	web服务器:     	apache
+	数据库服务器:    mysql
+	a.安装配置好phpstudy
+	b.确认apache和mysqld的服务正常启动
+	c.下载ecshop1压缩包，解压
+	d.把解压后的文件夹复制到WWW文件夹中
+	e.浏览器中打开127.0.0.1/ecshop1按照提示进行安装
+	f.安装第三步注意
+		数据库主机：localhost
+		端口号    : 3306
+		用户名    : root
+		密码      : root
+		数据库名  ： test
+
+
+
+
+
 
 
 
