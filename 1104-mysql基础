@@ -135,6 +135,49 @@ http://192.168.6.117/ecshop1
 		用户名    : root
 		密码      : root
 		数据库名  ： test
+6.mysql数据库的增删改
+	字符类型数据需要加单引号
+	数字类型数据直接使用
+	日期类型数据需要加单引号
+	create table emp(
+		name char(10),    名字
+		sal  int          工资
+	);
+
+	a.mysql的数据新增
+		向表中指定列新增数据
+		语法：insert into 表(列1,列2...) values(值1,值2);
+		需求:向emp表中新增数据，名字是o8ma
+			insert into emp(name) values('o8ma');
+		需求：向emp表中新增数据，名字为ladeng，工资100
+			insert into emp(sal,name) values(100,'ladeng');
+		向表中所有列新增数据
+		语法：insert into 表 values(值1,值2...);
+		需求:向emp表中新增数据，名字为HeyGor，工资20
+			insert into emp values('HeyGor',20);
+
+	b.mysql的数据修改
+		语法:update 表 set 列=值 where 条件;
+		注意:如果不加where条件，默认修改整个列的值，如果增加where条件，修改的是指定行的列
+		需求:修改emp表中数据，名字为o8ma的工资修改为2000
+		update emp set sal=2000 where name='o8ma';
+		需求:修改emp表中数据，工资为0
+		update emp set sal=0;
+
+	c.mysql的数据删除
+		delete    DML  删除指定数据，删除数据可以找回
+		truncate  DDL  只能删除全表数据，删除数据无法找回,截断表
+		c1.delete
+			语法：delete from 表 where 条件;
+			需求:删除emp表中名字是HeyGor的所有信息
+				delete from emp where name='HeyGor';
+			需求:删除emp表中所有数据
+				delete from emp;
+		c2.truncate
+			语法:truncate table 表;
+			需求:删除emp表中所有数据
+				truncate table emp;
+				
 
 
 
