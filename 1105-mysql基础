@@ -175,7 +175,20 @@ select s# from sc where c# in ('C2','C4');
 		4.update achievement set mark=87 where id=(select id from student where name='Rose');
 		5. delete from achievement where id=(select id from student where name='Betty');	
 		delete from student where name='Betty';
-
+补充：脑图
+	思维导图
+		1.总结知识
+		2.分析需求
+	常见思维导图软件
+		xmind
+		freemind
+		mindmanager
+		processon
+		百度脑图
+	百度脑图使用
+		1.insert  插入子主题
+		2.回车    创建同级主题
+		3.delete  删除主题
 
 
 
