@@ -44,9 +44,68 @@ b.内联查询
 		where g.cat_id=c.cat_id
 		and c.cat_name='3G手机';
 
+
 需求1:查询分类名称是3G手机或者服装的商品名称有哪些
+分析列:
+	分类名称
+	商品名称
+分析表:
+	ecs_goods
+	ecs_category
+关联：
+	select * from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id;
+过滤:
+	select g.goods_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and c.cat_name in ('3G手机','服装');
+
 需求2：查询商品本店售价范围在2000和3000之间所有的商品的分类名称 
+	select c.cat_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and g.shop_price between 2000 and 3000;
 需求3：查询分类名称是3G手机并且商品名称以诺基亚开头的商品名称 
+	select g.goods_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and c.cat_name='3G手机' and g.goods_name like '诺基亚%';
+    	
+1.jpg
+select * from test1 where department='计算机系' and place='北京';
+update test1 set Department='信息学院' where department='计算机系';
+select t1.no,t1.name,t2.grade,t2.courses 
+from test1 t1,test2 t2
+where t1.no=t2.no
+and t2.grade>=75;
 
+2.jpg
+select s.name from student s,achievement a where  s.id=a.id and a.mark>85;
+select count(id) from achievement where mark>=90;
+insert into achievement values(7,80);
+update achievement set mark=87 where id=3;
+delete from student where name='Betty';
+delete from achievement where id=6;
 
+4.jpg
+select s#,grade from sc where c#='C2';
+select sname from s where sname like 'D%';
+select s.s#,s.sname from c,sc,s
+where s.s#=sc.s#
+and c.c#=sc.c#
+and c.cname='Maths';
+select s# from sc where c# in ('C2','C4');
+
+2.sakila数据库的导入
+	a.下载sakila数据库
+		https://dev.mysql.com/doc/index-other.html
+		注意:
+		tgz 	是linux和unix专用
+		zip 是win用的
+	b.解压下载的压缩包
+	c.命令提示符进入到解压后的文件夹
+	d.导入sakila数据库
+		d1.登陆mysql数据
+		d2.导入sakila-schema.sql
+			source sakila-schema.sql
+		d3.导入sakila-data.sql
+			source sakila-data.sql
 
