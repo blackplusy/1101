@@ -110,7 +110,41 @@ select s# from sc where c# in ('C2','C4');
 			source sakila-data.sql
 
 查询以C开头的国家有哪些城市?
+1.分析列
+	国家名称
+	城市名称
+2.分析表
+	city
+	country
+3.关联
+	select * from city c,country co
+	where c.country_id=co.country_id;
+4.过滤
+	select c.city from city c,country co
+	where c.country_id=co.country_id
+	and co.country like 'C%';
 
 查询客户表中名字为MARY的所在城市?
+1.分析列
+	客户表
+	城市表
+2.分析表
+	客户表
+	城市表
+	address
+3.关联
+	select * from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and a.address_id=cu.address_id;
+4.过滤
+	select c.city from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and a.address_id=cu.address_id
+	and cu.first_name='MARY';
 
 查询客户表中名字为MARY的所在国家?
+	select co.country from city c,address a,customer cu,country co
+	where c.city_id=a.city_id
+	and a.address_id=cu.address_id
+	and c.country_id=co.country_id
+	and cu.first_name='MARY';
