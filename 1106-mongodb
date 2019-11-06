@@ -147,3 +147,43 @@ h.文档的查看
 		db.xiyouji.find({},{_id:0,name:1})
 	查看指定文档的指定属性
 		db.xiyouji.find({name:'kingkong'},{_id:0,jingli:1})
+i.查询表达式
+	https://docs.mongodb.com/manual/reference/operator/query/
+	a.比较运算符
+		$lt    小于
+		$gt    大于
+		$lte   小于等于
+		$gte   大于等于
+		$ne    不等于
+		db.xiyouji.find({name:{$ne:'kingkong'}})
+		db.xiyouji.find({age:{$gt:500}})
+	b.关系运算符
+		$and
+		$or
+		$not
+		db.xiyouji.find({$and:[{age:{$lt:2000}},{name:'5kong'}]})
+		db.xiyouji.find({$or:[{name:'5kong'},{name:'tiantian'}]})
+	c.存在性
+		$exists
+		db.xiyouji.find({age:{$exists:1}})
+	d.数据类型判断
+		$type
+		1.数字类型
+		2.字符类型
+		3.对象
+		4.数组
+		5.二进制数据
+		6.未定义
+		7.对象id
+		8.布尔
+		9.日期
+		10.空值
+		db.xiyouji.find({age:{$type:1}})
+		db.xiyouji.find({age:{$type:2}})
+
+
+
+
+
+
+
