@@ -1,0 +1,53 @@
+1.mongodb基础
+a.下载和安装
+	下载地址:https://www.mongodb.com
+	操作系统
+	位数
+	软件版本
+		msi 微软安装包
+		zip 压缩包
+	安装步骤：
+		解压压缩包
+b.mongodb的服务
+	c----------------------/---------------------s
+	mongo                                      mongod
+	mongo   mongodb的客户端服务
+	mongod  mongodb的主服务
+c.启动主服务
+	c1.启动命令(命令提示符)
+		mongod --dbpath d:\data
+		mongod --dbpath d:\data --logpath d:\data\mongo.log
+		--dbpath 	存放数据的路径
+		--logpath 	日志文件存放的位置
+	c2.启动方式
+		1>进入到mongodb的bin文件夹
+
+		2>设置环境变量
+			计算机--属性--高级--环境变量--系统变量--Path中添加mongodb的bin的路径
+			;D:\share\mongodb-win32-x86_64-2008plus-ssl-4.0.13\bin
+			确定--确定--确定
+	c3.检查服务和端口
+		mongod  mongodb的主服务
+		win+r--cmd--tasklist | find "mongod"
+		27017   mongodb的端口
+		win+r--cmd--netstat -an | find "27017"
+d.登陆
+	mongo
+		登陆本地test数据库
+	mongo 127.0.0.1/admin
+		登陆IP为127.0.0.1的admin数据库
+	mongo 127.0.0.1:27017/admin
+		登陆IP为127.0.0.1端口是27017的admin数据库
+e.基础命令
+	mysql      mongodb
+	数据库       数据库
+	表           集合
+	数据         文档
+	show dbs
+	show databases    查看当前有哪些数据库
+	db                查看当前数据库的名字
+	use local         当前数据库切换为local
+	show tables
+	show collections  查看当前有哪些集合
+	db.startup_log.find() 查询startup_log集合中所有文档
+
