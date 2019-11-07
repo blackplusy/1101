@@ -81,6 +81,39 @@
 			cd ..       目录切换到上一级目录
 			cd ~        目录切换到家目录
 			cd -        目录切换到上一次操作所在目录
+4.linux的网络设置
+	a.linux的网络设置
+		1>查看linux的IP地址
+			ifconfig       查看linux中网卡信息
+			ifconfig eth0  查看linux中第一块网卡信息
+		2>win中搜索一个和win同网段的IP
+			win查看ip: win+r--cmd--ipconfig
+			win搜索ip: win+r--cmd--ping 192.168.6.254
+		3>linux中setup命令设置
+			setup
+			网络配置
+			edit devices
+			eth0
+			修改对应配置
+				名称：不要改
+				设备：不要改
+				DHCP:取消(空格)
+			ok
+			save
+			save&quit
+		4>设置完网络后一定要重启网络服务
+			service network restart
+	b.虚拟机的网络设置
+		右键标签--设置--网络适配器-桥接、复制物理网络链接状态--确定
+		1>桥接
+			客户机可以和局域网中其他主机进行通信
+		2>网络地址转换
+			通过共享宿主机的网络进行通信，无法和局域网中其他主机进行通信
+		3>仅主机
+			客户机和宿主机的私有通道，无法和局域网中其他主机进行通信
+	c.测试
+		win:      ping linux的IP
+		linux:    ping windows的IP
 
 
 
