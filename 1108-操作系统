@@ -1,0 +1,45 @@
+1.命令回顾
+who
+whoami
+pwd
+ls
+cd
+ifconfig
+ping
+setup
+service
+2.目录操作
+	目录：linux中的文件夹
+	a.创建目录(mkdir)
+		mkdir a
+			当前目录下创建空目录a
+		mkdir b /opt/c
+			当前目录下创建空目录b，/opt下创建空目录c
+		mkdir d\ e
+			当前目录下创建空目录d e(特殊符号可以使用\转义符)
+		mkdir "f  g"
+			当前目录下创建空目录f g
+		mkdir h/i/j -p
+			创建级联目录h/i/j
+		tree
+			树状显示目录结构
+	b.复制目录(cp)
+		复制目录时候注意:加-r或者-a
+		cp -r h a  复制h目录到a目录中(a目录存在)
+		cp -r h i  复制h目录到当前目录下命名为i(i目录不存在)
+	c.移动目录(mv)
+		mv i/* b   剪切i目录下所有文件到b目录中(b目录存在)
+		mv h   j   重命名h目录为j(j目录不存在)
+	d.删除目录
+		rmdir
+		rm -r j    删除目录
+		rm -rf a   强制删除目录
+	e.练习
+		/opt
+		+-------A
+		|       +--A1
+		|       +--A2
+		|
+		+-------B
+		        +--D
+		        +--C
