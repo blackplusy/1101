@@ -1,0 +1,36 @@
+1.python的IDE
+	pycharm
+	eclipse+pydev
+	sublime text
+	anaconda
+2.python的运行环境
+	a.命令提示符
+		win+r--cmd--python
+	b.python自带idle
+	c.python终端
+	d.运行文件
+		win+r--cmd--python 文件名
+	e.IDE
+3.python的输入和输出
+	a.输出的应用场景
+		1>淘宝中返回的搜索信息
+		2>网站访问时候出现404
+		3>调试程序时候
+		4>登陆网站时候的提示
+	b.输入的应用场景
+		1>taobao搜索栏中输入的信息
+		2>登陆、注册网站时候输入
+		3>直播时候信息传入电脑
+	c.python中的输出
+		1>直接输出
+		2>变量输出
+		3>函数输出
+		4>格式化输出
+	d.python的输入
+		1>input
+			python2中接受键盘传入的数字类型数据
+			python3中接受键盘传入的字符类型数据
+		2>raw_input
+			python2中接受键盘传入的字符类型数据
+			python3中已经废弃
+			
