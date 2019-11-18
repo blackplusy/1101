@@ -110,12 +110,21 @@
 			;C:\Users\HeyGor\AppData\Local\Programs\Python\Python36\Scripts
 			确定--确定--确定
 
+9.selenium家族
+	selenium 1.0(rc) (过去式)
+	selenium IDE(集成环境，firefox和chrome中安装)
+	selenium webdriver(重点)
+	selenium grid(分布式自动化测试工具，可以再多个测试环境中并发执行，缩短测试脚本执行时间)
 
 
-
-
-
-
+10.webdriver驱动原理
+	webdriver的3个角色
+		1.自动化测试代码(打车的人)
+		2.浏览器的驱动(司机)
+		3.浏览器(汽车)
+	大概过程
+		执行脚本dbdriver会启动一个新的线程去启动一个浏览器，浏览器可以理解为服务器。脚本是客户端，通过脚本操作浏览器，脚本发送一个请求给浏览器，浏览器处理后返回给脚本
+	
 
 
 
