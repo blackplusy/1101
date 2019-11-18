@@ -75,6 +75,31 @@
 			br=webdriver.Chrome()
 			#打开目标网页
 			br.get("https://www.baidu.com")
+8.selenium的常见的元素定位方法
+	1.查看页面元素
+		浏览器中F12功能(开发者工具)，点击右键检查，查看对应元素的前端代码
+	2.元素定位方法
+		a.元素常见操作
+			click()  点击
+			clear()  清空
+			send_keys() 发送、输入内容
+		b.id定位
+			id:页面中id是唯一的
+		c.name定位
+		d.class定位
+		e.tag定位
+			html是通过tag拉定义功能的，input 输入，table 表格等等
+			工作用用的比较少，很难通过tag去区分不同元素
+		f.通过link定位
+			专门定位文本链接，比如百度上新闻等等
+		g.通过partial_link定位
+			超链接文本很长，全部输入浪费资源，这种方式叫做模糊匹配
+		h.xpath定位
+			理想状态，页面中都有id、name、class、超链接等等，实际情况不一样，属性相同，刷新页面属性值都会变
+		i.css定位
+			相对xpath简洁，速度快
+			
+
 
 
 
