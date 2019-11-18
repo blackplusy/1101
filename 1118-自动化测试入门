@@ -1,0 +1,90 @@
+1.自动化是什么？
+没人，或人数比较少参与下，按照人的要求自动检测，信息处理，分析判断，操作控制，实现预期目标
+
+2.什么是自动化测试
+包含单元测试，接口测试，UI测试，主要是编写代码、脚本让软件自动发现缺陷，替代部分手工测试
+
+3.自动化测试发展趋势
+测试在更多浏览器上进行，越来越多的人员使用新版本
+真实设备和模拟器混合成为移动端测试标准
+自动化测试价值明显
+敏捷和DevOPS使用较多，bug修复速度没有更快
+	敏捷开发
+	强调的是程序员和业务之间的协作，面对面
+	比书面文档更有效，频繁交付的版本
+	更好的使用需求变化的代码编写和团队组织，注重软件开发过程中人的作用
+
+4.自动化测试的优缺点
+自动化测试优点
+	回归测试更方便(程序修改频繁、效果明显)
+	运行更繁琐的测试(较少的时间运行较多的测试)
+	执行一些手动测试困难或者不能进行的测试(大量用户，不能有足够人员进行测试，可以通过自动化模拟多个用户)
+	更好的利用资源
+	测试具有一致性和重复性(脚本重用)
+自动化测试缺点
+	不能替代手工测试
+	手工测试比自动化测试发现缺陷(bug)更多,自动化测试不容易发现新的bug
+	对于测试质量依赖比较大：自动化测试脚本正常运行之前，先要经过功能测试通过
+	自动化测试可能会制约软件
+自动化和手动测试结合在一起
+
+5.主流测试框架
+	QTP、UFT
+	selenium 开源测试框架 python
+	PhantomJS
+	robot framework  
+
+6.selenium的特点
+	开源、免费
+	多浏览器支持  firefox chrome IE opera safari
+	多平台支持    linux   windows  mac
+	多语言支持    Java Python ruby  PHP c# js
+	对web页面有良好的支持
+	简单(API),灵活(语言驱动)
+	支持分布式测试执行用例
+
+7.python+pycharm+selenium
+	a.安装python
+	    注意:Add Python To Path
+	b.安装pycharm
+		社区版(推荐) community
+		专业版(多了SQL支持，web开发支持)
+		傻瓜安装(下一步。。。)
+	c.配置pycharm的interpreter
+		interpreter：默认是虚拟环境中的python版本
+		把interpreter设置为当前系统中的python版本
+			file--settings--project interpreters--点击螺丝--add--搜索电脑上安装好的python
+			--make xxxprojects
+	d.安装selenium模块
+		win+r--cmd--pip install selenium
+		下载对应浏览器的webdriver驱动
+			selenium 2.x firefox驱动自带
+			selenium 3.x 所有浏览器的驱动都要单独下载
+			webdriver和浏览器的版本一定要对应
+			浏览器建议关闭自动更新
+		1.查看浏览器的版本
+			帮助--关于xxx
+		2.搜索浏览器对应版本的webdriver驱动
+			下载地址：
+			http://npm.taobao.org/mirrors/chromedriver/
+		3.下载后压缩包解压，webdriver驱动文件复制到python的安装目录下
+		4.测试代码
+			#导入webdriver，用于调用
+			from selenium import webdriver
+			#加载驱动，浏览器是什么类型驱动就必须是什么类型
+			br=webdriver.Chrome()
+			#打开目标网页
+			br.get("https://www.baidu.com")
+
+
+
+
+
+
+
+
+
+
+
+
+
