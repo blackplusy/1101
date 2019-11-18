@@ -98,9 +98,17 @@
 			理想状态，页面中都有id、name、class、超链接等等，实际情况不一样，属性相同，刷新页面属性值都会变
 		i.css定位
 			相对xpath简洁，速度快
-			
 
-
+	3.补充
+		pip命令 无法使用
+		解决方案1(临时解决)：
+			进入到python的安装路径下的Sctipts中(pip文件所在文件夹)
+			地址栏中输入cmd，然后pip install xxx
+		解决方案2(永久解决)：
+			把pip命令所在文件夹添加到环境变量里面
+			计算机--属性--高级--环境变量--系统变量--Path中添加
+			;C:\Users\HeyGor\AppData\Local\Programs\Python\Python36\Scripts
+			确定--确定--确定
 
 
 
