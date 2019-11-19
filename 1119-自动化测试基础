@@ -55,6 +55,30 @@
 			and   同时满足条件
 			or    满足一个条件即可
 			$x("//a[@class='mnav' and @name='tj_trnews']")
+3.定位一组元素
+	find element  定位一个元素(查找唯一元素)
+		仅仅查找返回页面符合条件的第一个元素
+		如果定位不到元素会报错
+	find elements 定位一组元素(查找多个元素)
+		查找多个元素并且返回一个列表
+		如果定位不到元素不会报错，返回一个空列表
+	补充:元素.get_attribute("name")  获取name属性的值
+4.selenium对浏览器操作
+	a.控制浏览器窗口大小
+		set_windows_size()  浏览器窗口大小
+	b.窗口最大化
+		maximize_window()    浏览器窗口最大化
+	c.窗口最小化
+		minimize_window()    浏览器窗口最小化
+	d.浏览器的前进和后退
+		前进 forward（）
+		后退 back()
+	e.浏览器的刷新
+		refresh()
+	f.窗口截屏
+		get_screenshot_as_file() 截屏一般都是.png结尾的文件
+	g.浏览器的退出
+		quit()
 
 
 
