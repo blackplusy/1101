@@ -23,4 +23,46 @@
 			属性有多个空格分开，匹配其中一个值的方法
 			匹配属性值为字符串开头的方法
 			匹配属性值为字符串结尾的方法
-			
+2.xpath定位
+	针对xml的路径语言，通过元素的路径来找到这个元素
+	a.工具
+		F12 
+		firebug
+	b.用法
+		/ 	绝对路径，从根节点选取元素
+		//  相对路径，所有子节点中搜索对应元素
+		@   选取属性
+		.   当前节点
+		..  当前节点的父节点
+		注意:通过浏览器的F12的console进行调试$x()
+		b1.xpath支持id、class、name进行定位
+			通过id定位
+				$x("//*[@id='kw']")
+				$x("//input[@id='kw']")
+			通过name定位
+				$x("//*[@name='wd']")
+			通过class定位
+				$x("//*[@class='s_ipt']")
+				$x("//input[@class='s_ipt']")
+		b2.如果没id，class，name属性，xpath支持属性定位功能
+			$x("//*[@autocomplete='off']")
+		b3.通过层级关系定位元素
+			1>通过相对路径来定位元素
+				$x("//a[@class='mnav'][1]")
+			2>通过绝对路径来定位元素
+				$x("/html/body/div[1]/div[1]")
+		b4.xpath的运算符
+			and   同时满足条件
+			or    满足一个条件即可
+			$x("//a[@class='mnav' and @name='tj_trnews']")
+
+
+
+
+
+
+
+
+
+
+
