@@ -79,6 +79,19 @@
 		get_screenshot_as_file() 截屏一般都是.png结尾的文件
 	g.浏览器的退出
 		quit()
+5.鼠标操作
+	单击
+		click()
+	双击
+		double_click()
+	滚轮
+		sorry
+	右键
+		context_click()
+	拖拽
+		drag_and_drop()
+	执行
+		perform()
 
 
 
