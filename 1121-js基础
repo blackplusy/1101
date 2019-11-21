@@ -1,0 +1,14 @@
+1.复合数据类型
+	a.常用内置对象
+	b.日期对象
+	c.数学对象
+	d.字符串对象
+		封装了和字符串相关的特性，用来处理字符串，对字符串进行剪切、合并、替换等操作
+		调用string对象的方法或者属性
+		string([val])
+		注意:val是可选项
+		// string.substring(start,stop)
+		// start必须要有，规定需要提取的字符串第一个字符在string中的位置
+		// stop可选，非负数，比提取字符串最后一个字符多1，如果省略这个参数，返回字符串一直到结尾
+		// slice用法：arrayobject.slice(start,end)
+		// 返回一个新的数组，包含start到end不包含该元素的arrayobject中元素
