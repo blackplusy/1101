@@ -1,0 +1,67 @@
+1.IT行业基础
+a.常见的软件架构
+	QQ
+	微信
+	微博
+	淘宝
+	wps
+	LOL
+	美图
+	高德地图
+	腾讯视频
+	真三国无双
+	a1.单机软件
+		不需要网络就可以执行的应用程序
+		hackercon  
+		defcon
+	a2.b/s架构软件
+		b:浏览器
+			IE         360  uc  qq  遨游  世界之窗  搜狗   
+			chrome     开发(调试功能、插件、快)
+			firefox    测试--渗透测试--hackerbar
+			safari     苹果
+		s:服务器
+			性能非常牛逼的电脑
+		测试关注点:不同浏览器、不同版本的兼容性问题
+	a3.c/s架构软件
+		c:客户端
+			pc端
+				笔记本、台式、服务器
+			移动端
+				手机、ipad、智能终端
+		s:服务器
+			性能非常牛逼的电脑
+		测试关注点:不同操作系统、不同位数的安装和反安装（软件捆绑），兼容性问题
+			操作系统：
+				win
+					win7  win10 winxp
+				linux
+					ubuntu redhat suse
+				unix
+					mac os   aix
+			操作系统位数
+				32位   x86  i386 i686
+				64位   x64  x86_64
+b.测试分类
+	功能测试           7-9k  
+	游戏测试           6-16k
+	自动化测试         13k
+		python、java
+		selenium         开源测试框架     
+		robotfamework    关键字驱动
+		appium           移动端测试
+		pytest           接口自动化
+	性能测试           18k
+		jmeter
+		loadrunner
+	接口测试           10k
+		抓包、请求
+	安全测试  
+c.职业规划
+	水果店老板
+	技术牛   20-25k     5w
+	管理     13-20k    50w  
+	需求       
+
+
+
