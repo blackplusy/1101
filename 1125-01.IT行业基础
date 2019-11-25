@@ -63,5 +63,92 @@ c.职业规划
 	管理     13-20k    50w  
 	需求       
 
+d.访问网站的过程
+	1.浏览器中输入域名
+	2.通过网络把数据传输到DNS服务器(域名解析服务器)[把域名解析为IP]
+		域名解析服务器
+			1>正向解析(域名--IP)
+			2>反向解析(IP--域名)
+	3.通过网络把数据发送给目标网站的web服务器
+	4.web服务器解析请求后，到数据库中搜索相应的数据
+	5.数据库把数据返回给web服务器，web服务器整合资源后发回给浏览器
+e.b/s架构的后端
+	操作系统
+		win
+		linux
+		unix
+	web服务器
+		apache   不支持java
+		tomcat   java
+		iis      微软
+		nginx    轻量级web服务器(负载均衡、反向代理)
+	数据库服务器
+		mysql    oracle
+		oracle   oracle
+		sqlserver微软
+f.URL(统一资源定位器)
+	http://sports.sina.com.cn:80/slamdunk/live.shtml?id=2019112507
+	1.协议    http
+	2.域名    sports.sina.com.cn
+	3.端口    80(80端口默认不显示)
+	4.虚拟目录 slamdunk
+	5.访问文件 live.shtml
+	6.访问文件使用的参数 id=2019112507
+
+	1.协议
+		一组规则规范
+		http协议(超文本传输协议)
+			http协议规定了数据在传输过程中先传输什么，后传输什么，怎样进行传输
+		http协议的特点
+			无状态(彼此不记录过去的行为)
+		超文本(富文本)：有图有真相(声音、图像、视频)
+		普通文本
+		http协议的请求
+			get   我要什么，请求的数据显示在url上，相对不安全，主要用于浏览
+				https://s.taobao.com/search?q=lv&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306
+				https://s.taobao.com/search?q=zara&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20191125&ie=utf8
+			post  我给什么，请求的数据显示在请求体中，相对安全，主要用于提交(修改数据)
+		cookie&session
+			cookie   验证信息 存放在客户端   定投广告
+			session  验证信息 存放在服务端   购物车    30分钟超时
+		状态码
+			200      2开头请求成功
+			302      3开头移动或者缓存(重定向)
+			404      4开头客户端请求有问题
+			500      5开头服务端有问题
+		抓包(没讲)
+	2.域名
+		FQDN(完全合格域名)
+		DNS服务(域名解析服务器)
+			正向：域名--IP
+				win+r--cmd--nslookup www.bilibili.com
+			反向：IP--域名(公网不允许)
+				win+r--cmd--nslookup 139.159.241.37
+	3.端口
+		区分应用层进程的标识
+		如果出现一台主机有两个相同软件同时运行，需要修改其中一个的端口来解决端口冲突问题
+		mysql 	3306
+		oracle	2521
+		mongodb 27017
+		apache/nginx/iis 80
+		tomcat  8080
+		ssh     22
+		win查看端口信息
+			win+r--cmd--netstat -an | find "135"
+			netstat -an   查看电脑中开放的所有端口
+			|             管道，前面的输出作为后面的输入
+			find          搜索
+		补充：
+			0.0.0.0       任意IP地址
+			127.0.0.1==localhost==电脑本机
+
+
+
+
+
+
+
+
+
 
 
