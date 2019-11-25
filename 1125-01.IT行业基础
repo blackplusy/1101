@@ -197,6 +197,86 @@ g.抓包
 			bpu
 			bpu http://testecshop.t5.163ns.cn/user.php
 			bpu
+h.测试环境搭建(b/s和c/s)
+	h1.web服务器后端
+		1>操作系统
+		2>web服务器
+			apache
+			tomcat
+			iis
+			nginx
+		3>数据库服务器
+			oracle
+			mysql
+			sqlserver
+	h2.常见搭配
+		操作系统      web服务器     数据库服务器
+		win             iis          mysql/sqlserver/access
+					   apache        mysql
+					   tomcat        mysql/oracle
+		linux          apache        mysql                 (LAMP)
+					   nginx         mysql                 (LNMP)
+					   tomcat        mysql/oracle
+	h3.集成软件
+		wamp
+			w:windows
+		xampp
+			x:任意操作系统
+			a:apache
+			m:mysql
+			p:php
+			p:perl
+		phpstudy
+		小旋风
+	h4.phpstudy
+		1>下载安装
+			建议下载phpstudy2016
+		2>文件夹简介
+			apache
+				bin   	存放命令的位置
+				conf    存放配置文件的位置
+					httpd.conf  apache的主配置文件
+				logs    存放日志的位置
+			mysql
+				bin    	存放命令的位置
+				data    存放数据的位置
+				lib     存放库文件的位置
+				my.ini  mysql的配置文件
+			WWW         存放项目的位置
+		3>服务和端口
+			服务：
+				apache   httpd
+				mysqld   mysqld
+				win+r--cmd--
+					tasklist | find "httpd"
+					tasklist | find "mysqld"
+			端口：
+				apache   httpd
+				mysqld   mysqld
+				win+r--cmd--
+					netstat -an | find "3306"
+					netstat -an | find "80"
+	h5.ecshop电商项目环境部署
+		开发语言   	php
+		web服务器  	apache
+		数据库服务器 mysql
+		1.启动phpstudy
+		2.检查apache和mysql服务是否正常运行
+		3.下载ecshop1压缩包，解压到phpstudy的WWW文件夹下
+		4.通过浏览器访问 127.0.0.1/ecshop1，按照提示安装
+			注意:配置系统
+				数据库 localhost
+				端口号 3306
+				用户名 root
+				密码   root
+				数据库名 test
+			注意：安装测试数据
+
+
+
+
+
+
 
 
 
