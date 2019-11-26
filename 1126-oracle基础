@@ -16,5 +16,74 @@ c.打开虚拟机
 	2>解压压缩包
 	3>进入到文件夹中找到以.vmx结尾的文件
 	4>通过vmware打开该文件
-	
+	密码:20110930
+	补充：修改server03 管理员密码
+		右键计算机--管理--本地用户和组--用户--Administrator--右键设置密码
+d.oracle数据库的版本
+	8i
+	9i
+		i:internet
+	10g
+	11g
+		g:grid
+	12c
+		c:cloud
+	。。。
+e.oracle的服务
+	c------/-----s
+	服务端(s)
+		图形化--计算机--管理--服务和应用程序--服务
+		oracle主服务
+			OracleServiceORCL
+		oracle监听服务
+			Oracle....TNSlistener
+		===========================================
+		通过命令行查看
+		oracle主服务
+			win+r--cmd--sqlplus / as sysdba--select status from v$instance;
+
+			sqlplus oracle工具，字符界面
+			sqlplus / as sysdba  管理员登陆本地数据库
+			select status from v$instance;
+			查看当前数据库的状态
+
+		oracle监听服务
+			win+r--lsnrctl status
+			lsnrctl status  查看监听服务状态
+			lsnrctl stop    关闭监听
+			lsnrctl start   启动监听
+	客户端(c)
+		tns配置(监听配置文件)
+		C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN\tnsnames.ora
+		ORCL =                                       #标识名字
+		  (DESCRIPTION =
+		    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.255.132)(PORT = 1521))   #协议、主机地址(修改为自己的IP地址)、端口
+		    (CONNECT_DATA =
+		      (SERVER = DEDICATED)
+		      (SERVICE_NAME = orcl)
+		    )
+		  )
+		 测试tns配置是否正确
+		 win+r--cmd--tnsping orcl--看到ok说明可以链接oracle
+
+
+f.重建oracle监听
+	win+r--cmd--netca--监听程序配置--删除--LISTENER--删除(是)--下一步--监听程序配置--添加--下一步--下一步--下一步--下一步--下一步--完成
+
+g.管理oracle的工具
+	sqlplus               字符界面
+	isqlplus
+	em                    企业管理器
+	sqldeveloper          oracle官方
+	pl/sql developer      oracle收购
+	toad
+	dbeaver
+	navicat
+i.登陆
+	用户名：sys
+	密码：test
+	database:ORCL
+	connect as: sysdba
+
+
 
