@@ -192,14 +192,49 @@ k.表结构
 			列 数据类型 references 被参考表(被参考列)   #外键约束
 		);
 		contraint  约束，后面跟的是约束的名字，如果不给这个约束名字，系统会自动分配一个名字给约束，导致报错时候不知道具体是那里报错
-		例子:创建表流水(water),名字(name) 字符类型,流水号(num) 数字类型，主键约束
-		create table water(
-			name char(10),
-			num number primary key
-		);
-		查看约束的办法
-		右键表-view
-		小箭头
+		主键约束
+			例子:创建表流水(water),名字(name) 字符类型,流水号(num) 数字类型，主键约束
+			create table water(
+				name char(10),
+				num number primary key
+			);
+			查看约束的办法
+			右键表-view
+			小箭头
+		唯一约束
+			例子：创建用户信息表userinfo,id设置为唯一约束，数字类型，名字name设置为字符类型
+			create table userinfo(
+					id number unique,
+					name char(10)
+			);
+		非空约束
+			例子：创建表学生，学生名字 字符类型 不能为空，学生id 数字类型
+			create table 学生(
+					学生名字 char(10) not null,
+					学生id   number
+			);
+		检查约束
+			例子：创建学生表stu,名字name字符类型，性别sex只能是男或者女，字符类型
+			create table stu(
+					name char(10),
+					sex char(10) check(sex='男' or sex='女')
+			);
+		外键约束(参考约束)
+			被参考表的被参考列一定是存在
+			参考列和被参考列的数据类型必须一致
+			被参考列一定是主键约束
+			userinfo
+			创建用户表2个列，一个是info 字符类型，一个是id 数字类型，主键约束
+			create table 用户(
+				info char(10),
+				id number primary key
+			);
+			orderifno
+			创建订单表，2个列，一个info 字符类型，一个是id，参考，来自于用户表中的id
+			create table 订单(
+				info char(10),
+				id number references 用户(id)
+			);
 
 
 
