@@ -80,10 +80,51 @@ g.管理oracle的工具
 	dbeaver
 	navicat
 i.登陆
-	用户名：sys
-	密码：test
-	database:ORCL
-	connect as: sysdba
+	1>用户和权限
+		11>用户
+			系统管理员2个sys，system，这两个用户登陆时候必须用sysdba角色，除了这俩用户外全部使用normal
+			创建用户
+				语法:create user 用户名 identified by 密码;
+				例子:创建用户赵本山,密码zbs
+					create user 赵本山 identified by zbs;
+			修改用户(修改密码、锁定解锁)
+				修改密码语法:alert user 用户 identified by 密码;
+				例子:修改kobe的密码为cba
+					alter user kobe identified by cba;
+				锁定和解锁用户语法:alter user 用户 (identified by 密码) account unlock(lock)
+				例子:解锁scott用户
+					alter user scott account unlock;
+			删除用户
+				删除用户语法:drop user 用户名;
+				例子:删除用户赵本山
+					drop user 赵本山;
+		12>权限
+			常见权限
+				dba            数据库管理员权限
+				connect        链接数据库的权限
+				resource       调用数据库资源的权限
+			授权
+				语法:grant 权限 to 用户;
+				例子:赋予kobe链接数据库和调用数据库资源权限
+					grant connect,resource to kobe;
+			回收授权
+				语法:revoke 权限 from 用户
+				例子:回收kobe的链接数据库和调用数据库资源权限
+					revoke connect,resource from kobe;
+		13>角色
+			权限的集合
+			normal     普通用户权限
+			sysoper    系统操作员权限
+			sysdba     管理员权限
+
+j.sqlplus 的命令
+	登陆
+	sqlplus 用户名/密码 
+		普通用户登陆本地数据库
+	sqlplus 用户名@orcl 
+		普通用户登陆TNS中配置为orcl的数据库
+	sqlplus sys/test@orcl as sysdba
+		管理员以sysdba身份登陆TNS中配置为orcl的数据库
 
 
 
