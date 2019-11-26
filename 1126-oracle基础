@@ -1,0 +1,20 @@
+1.oracle
+a.下载和安装oracle数据库
+	1>到oracle官网下载oracle数据库
+		https://www.oracle.com/cn/database/technologies/
+	2>安装
+		注意：
+		操作系统是专业版或者企业版
+		安装时候使用管理员权限安装
+	3>课程中使用虚拟机
+		避免环境问题
+		方便移动
+b.vmware安装
+	傻瓜安装
+c.打开虚拟机
+	1>下载好03-oracle压缩包
+	2>解压压缩包
+	3>进入到文件夹中找到以.vmx结尾的文件
+	4>通过vmware打开该文件
+	
+
