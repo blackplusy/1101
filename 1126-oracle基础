@@ -126,5 +126,94 @@ j.sqlplus 的命令
 	sqlplus sys/test@orcl as sysdba
 		管理员以sysdba身份登陆TNS中配置为orcl的数据库
 
+k.表结构
+	数据库通常由表组成
+	表是由数据组成
+	1>数据类型
+		数字 		number  
+		字符串		char    varchar   varchar2
+		日期        date
+		char和varchar区别
+		char(10)   	定长   6个字符，存储10个
+		varchar(10) 变长   6个字符，存储6个
+	2>表结构
+		21>创建表
+		语法:create table 表(
+				列名 数据类型,
+				列名 数据类型,
+				。。。
+			);
+		例子:创建表dingding,里面3个列，员工名字name字符类型，最多10个字符，加班时长dtime，数字类型，打卡时间 dtime，日期类型
+		create table dingding(
+				name char(10),
+				time number,
+				dtime date
+			);
+		22>查看表结构
+		a.右键表--view--columns
+		b.右键表--discribe
+		c.小箭头方法
+		d.通过命令查看表结构
+			desc 表名;
+		23>修改表结构
+			增加列
+				alter table 表 add 列 数据类型
+				例子:dingding表中新增列,是否打卡(dk),字符类型
+				alter table dingding add dk char(10);		
+			修改列
+				alter table 表 modify 列 数据类型
+				例子:dingding表中修改打卡列数据类型为数字类型
+				alter table dingding modify dk number;	
+			删除列
+				alter table 表 drop column 列;
+				例子:dingding表中删除dk列
+				alter table dingding drop column dk;
+		24>删除表结构
+			语法：drop table 表;
+			例子:删除dingding表
+			drop table dingding;
+	3.约束
+		a.主键约束
+			主键是针对于外键来说，一张表中只能有一个主键，主键列中的数据是唯一的，不能为空的
+		b.唯一约束
+			唯一约束作为主键约束的补充，一张表中可以有多个唯一约束，可以为空，列中的数据是唯一的
+		c.非空约束
+			列中的数据不能为空
+		d.检查约束
+			列中的数据是否满足条件
+		e.外键约束(参考约束)
+			一张表中列的数据依赖于另外一张表中列的数据
+		语法:
+		create table 表 (
+			列 数据类型 [contraint 约束名] primary key,  #主键
+			列 数据类型 unique,                       #唯一
+			列 数据类型 not null,                     #非空
+			列 数据类型 check(检查条件),               #检查
+			列 数据类型 references 被参考表(被参考列)   #外键约束
+		);
+		contraint  约束，后面跟的是约束的名字，如果不给这个约束名字，系统会自动分配一个名字给约束，导致报错时候不知道具体是那里报错
+		例子:创建表流水(water),名字(name) 字符类型,流水号(num) 数字类型，主键约束
+		create table water(
+			name char(10),
+			num number primary key
+		);
+		查看约束的办法
+		右键表-view
+		小箭头
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
