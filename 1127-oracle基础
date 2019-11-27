@@ -168,7 +168,34 @@
 	多排序例子:
 		select * from emp order by  deptno,sal desc;
 
+--qq笔试
+select * from emp where deptno=30;
+select ename,empno,deptno from emp;
+select ename from emp where nvl(comm,0)>sal;
+select ename from emp where nvl(comm,0)>sal*0.6;
 
+9.子查询（嵌套）
+	一条SQL语句的执行依赖于另外一条SQL语句的执行结果
+	子查询可以用于数据新增，修改，删除，查询
+	例子:查询emp表中工资高于平均薪资的人的所有信息
+	select * from emp where sal>avg(sal);---x
+	a.查询emp表中出平均薪资是多少
+		select avg(sal) from emp;
+	b.查询emp表中大于上面查询出来结果的人的所有信息
+		select * from emp where sal>(select avg(sal) from emp);
+	例子:查询SCOTT的上司的名字
+	a.查询emp表中满足条件的上司员工号
+		select mgr from emp where ename='SCOTT';
+	b.查询emp表中员工号是上面查询出来结果的名字
+		select ename from emp where empno=(select mgr from emp where ename='SCOTT');
+	子查询分为单行子查询和多行子查询
+		单行子查询: 查询子句查询出来结果返回一个值  等号和in
+		多行子查询: 查询子句查询出来结果返回多个值  in或者all或者any
+	例子:查询工资高于20号部门所有员工工资的人的所有信息
+	a.查询出所有20号部门的工资
+		select sal from emp where deptno=20;
+	b.查询工资高于上面结果的人的信息
+		select * from emp where sal>all(select sal from emp where deptno=20);
 
 
 
