@@ -59,5 +59,63 @@
 			truncate table user1;
 
 
+6.数据的查询(简单查询)
+	数据查询可以查询指定行，查询指定列，查询指定行的列，查询所有信息
+	语法:select 列 from 表 where 条件;
+	select后面from前面是和列相关的
+	where条件是和行相关
+	emp表结构
+		empno  员工号
+		ename  员工名字
+		job    职位
+		mgr    上司的员工号
+		hiredate 入职日期
+		sal    工资
+		comm   佣金
+		deptno 部门号
+	例子:查询emp表中所有的数据
+	*是代表所有列
+	select * from emp;
+	select empno,ename,job,mgr,hiredate,sal,comm,deptno from emp;
+	例子:查询名字是SCOTT的人的所有信息
+	select * from emp where ename='SCOTT';
+	例子:查询所有员工的名字
+	select ename from emp;
+	例子:查询名字为KING的人的工资
+	select sal from emp where ename='KING';
+
+7.where子句
+	a.比较运算符
+		>
+		<
+		=
+		>=
+		<=
+		!=
+		<>
+		例子:查询emp表中工资高于3000的人的名字和工资
+		select ename,sal from emp where sal>3000;
+		例子:查询emp表中名字不是SCOTT的人的所有信息
+		select * from emp where ename!='SCOTT';
+		select * from emp where ename<>'SCOTT';
+	b.逻辑运算符
+		and  同时满足条件
+		or   满足一个条件
+		not  不满足条件
+		例子:查询emp表中工资低于1600并且高于1200的所有信息
+		select * from emp where sal<1600 and sal>1200;
+		例子:查询emp表中名字为KING或者工资低于1500的所有信息
+		select * from emp where ename='KING' or sal<1500;
+	c.区间
+		between..and...
+		区间是包括两个端点
+		例子:查询emp表中薪资范围是800和1600之间的所有信息
+		select * from emp where sal>=800 and sal<=1600;
+		select * from emp where sal between 800 and 1600;
+		
+
+
+
+
 
 
