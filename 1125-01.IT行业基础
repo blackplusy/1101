@@ -128,7 +128,7 @@ f.URL(统一资源定位器)
 		区分应用层进程的标识
 		如果出现一台主机有两个相同软件同时运行，需要修改其中一个的端口来解决端口冲突问题
 		mysql 	3306
-		oracle	2521
+		oracle	1521
 		mongodb 27017
 		apache/nginx/iis 80
 		tomcat  8080
