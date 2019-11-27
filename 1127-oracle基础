@@ -112,7 +112,72 @@
 		例子:查询emp表中薪资范围是800和1600之间的所有信息
 		select * from emp where sal>=800 and sal<=1600;
 		select * from emp where sal between 800 and 1600;
-		
+	d.空值查询
+		空是没有任何数据类型，没有任何值的,空值不能用于运算和比较，查询时候使用is null或者is not null
+		null>null-1
+		null=null
+		例子:查询emp表中comm为空的所有数据
+		select * from emp where comm is null;
+		例子:查询emp表中comm为非空的所有数据
+		select * from emp where comm is null;
+		oracle中有对于空处理的函数nvl、nvl2，如果为空则显示成
+		nvl(列，如果为空显示的值)
+		例子:查询emp表中所有数据，如果comm为空则显示为0
+		select e.*,nvl(e.comm,0) from emp e;
+		select comm,nvl(comm,0) from emp;
+	e.模糊查询
+		当查询信息不完整的时候，使用模糊查询，一般来说是和字符类型一起使用
+		like
+		_      一个字符
+		%      任意个字符
+		例子:查询emp表中名字以S开头的所有信息
+		select * from emp where ename like 'S%';
+		例子:查询emp表中名字以T结尾的所有信息
+		select * from emp where ename like '%T';
+		例子:查询emp表中名字5个字符的所有信息
+		select * from emp where ename like '_____';
+	f.in查询
+		in代表在。。。里面，或的关系，不是区间
+		例子:查询emp表中名字是KING或者SCOTT的所有信息
+		select * from emp where ename in ('KING','SCOTT');
+	g.常用函数
+		upper()      大写
+		lower()      小写
+		initcap()    首字母大写
+		例子:查询emp表中所有员工名字,名字大写，小写，首字母大写
+		select ename,lower(ename),initcap(ename),upper(lower(ename)) from emp;
+		round()      小数点后保留几位
+		avg()        平均
+		例子:查看emp表中平均工资，小数点后保留2位
+		select avg(sal),round(avg(sal),2) from emp
+		distinct()   去重
+		例子:查询emp表中有哪些职位
+		select distinct(job) from emp;
+
+8.排序
+	顺序：从小到大
+		order by 列 ;
+		order by 列 asc;
+	倒序：从大到小
+		order by 列 desc;
+	排序有单排序，多排序
+	例子:查询emp表中所有数据，按照工资顺序排列
+		select * from emp order by sal;
+	例子:查询emp表中所有数据，按照工资倒序排列
+		select * from emp order by sal desc;
+	多排序例子:
+		select * from emp order by  deptno,sal desc;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
