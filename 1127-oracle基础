@@ -1,0 +1,63 @@
+1.SQL语句分类
+	SQL：结构化查询语言
+		DDL 数据库定义语言   create alter drop truncate
+		DML 数据库操作语言   insert update delete
+		DCL 数据库控制语言   grant revoke
+		DQL 数据库查询语言   select
+2.事务
+	一件事有开始就一定要结束，DML语句会触发事务的开始，就一定要结束
+	我------TEL-----地主家的傻儿子
+	结束<------bank<----开始
+	commit    提交数据到数据库中，除非人为修改否则不会变化
+	rollback  当前数据库状态恢复到最后一次提交时候的状态
+3.数据的新增
+	字符类型加单引号
+	数字类型直接使用
+	日期类型使用to_date()函数
+	新增数据的数据类型必须和列的数据类型一致
+	create table user1 (
+		name char(10),
+		age  number,
+		birth date
+	);
+	a.向表中指定列新增数据
+	语法:insert into 表(列1,列2....) values(值1,值2.....);
+		例子：向user1表中新增数据，名字为gaga，年龄为18
+		insert into user1(name,age) values('gaga',18);
+		commit;
+	b.向表中所有列新增数据
+	向表中新增数据时候注意顺序
+	sysdate 系统当前时间
+	语法:insert into 表 values(值1,值2....);
+		例子：向user1表中新增数据，名字vava，年龄23,生日 2018-01-01
+		insert into user1 values('vava',23,sysdate);
+		insert into user1 values('vava',23,to_date('2018-01-01','YYYY-MM-DD'));
+		commit;
+4.数据的修改
+	字符类型加单引号
+	数字类型直接使用
+	日期类型使用to_date()函数
+	语法:update 表 set 列=值 where 条件;
+	注意:如果不增加where条件，默认修改的是整个列的数据，如果增加的话是指定行的列
+		例子:修改user1中名字是gaga的年龄为100
+		update user1 set age=100 where name='gaga';
+		commit;
+		例子:修改所有人的年龄为0
+		update user1 set age=0;
+5.数据的删除
+	a.delete    删除指定数据,删除数据可以找回，DML
+		语法:delete [from] 表 where 条件;
+		如果不加where条件删除的是表中所有数据，如果增加where条件删除的是指定数据
+		例子:删除user1表中名字为vava的所有信息
+			delete user1 where name='vava';
+			commit;
+		例子:删除user1表中所有数据
+			delete user1;
+	b.truncate  删除所有数据，删除数据无法找回，DDL,截断表
+		语法:truncate table 表;
+		例子:删除user1表中所有数据
+			truncate table user1;
+
+
+
+
