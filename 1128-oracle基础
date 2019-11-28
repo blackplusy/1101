@@ -83,8 +83,28 @@ select dname from dept where deptno=(select deptno from emp where ename='SCOTT')
 
 
 查询员工名字以S开头的员工部门所在地?
-查询薪资高于平均水平的员工的部门名字?
+select d.dname from emp e,dept d
+where e.deptno=d.deptno
+and e.ename like 'S%';
 
+
+查询薪资高于平均水平的员工的部门名字?
+select avg(sal) from emp;
+select d.dname from emp e,dept d
+where e.deptno=d.deptno
+and e.sal>(select avg(sal) from emp);
+
+
+--1.jpg
+select * from test1 where department='计算机系'
+and place='北京';
+
+update test1 set department='信息学院'
+where department='计算机系';
+
+select t1.no,t1,name,t2.grade,t2.courses from test1 t1,test2 t2
+where t1.no=t2.no
+and t2.grade>=75;
 
 
 
