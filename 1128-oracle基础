@@ -178,8 +178,30 @@ select 列 from 表
 				order by 列;
 
 查询826班所有课程的总分、平均分、最高分、最低分
+select  sum(st.score),avg(st.score),max(st.score),min(st.score)
+from class c,course co,student s,stscore st
+where  c.classid=s.classid
+and co.courseid=st.courseid
+and s.studentid=st.studentid
+and c.classname='826'
+group by co.cname;
+
 查询826班oracle课程的总分、平均分、最高分、最低分
+select  sum(st.score),avg(st.score),max(st.score),min(st.score)
+from class c,course co,student s,stscore st
+where  c.classid=s.classid
+and co.courseid=st.courseid
+and s.studentid=st.studentid
+and c.classname='826'
+and co.cname='oracle'
+group by co.cname;
+
 查询每个学员的总分、平均分、最高分、最低分
+
+select  s.sname,sum(st.score),avg(st.score),max(st.score),min(st.score) 
+from student s,stscore st
+where s.studentid=st.studentid
+group by s.sname;
 
 
 
