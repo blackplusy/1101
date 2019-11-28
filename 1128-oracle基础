@@ -1,0 +1,95 @@
+--7.jpg
+1.
+a.查询c表中满足条件的C#
+select c# from c where cn='税收基础';
+b.查询sc表中c#是上面查询出来结果的s#
+select s# from sc where c# in (select c# from c where cn='税收基础');
+c.查询s表中s#为上面查询出来结果的学号和姓名
+select s#,sn from s where s# in (select s# from sc where c# in (select c# from c where cn='税收基础'));
+2.
+a.查询sc表中满足条件的s#
+select s# from sc where c#='C2';
+b.查询s表中满足s#为上面查询出来情况名字和单位
+select sn,sd from s where s# in (select s# from sc where c#='C2')
+3.
+select sn,sd from s where s# in (select s# from sc where c#!='C5')
+===========================================================================
+1.多表查询
+当一张表中数据无法满足条件时候使用两张表，或者多张表
+a.笛卡尔积
+两张表不做任何关联产生的数据,产生大量无效数据，数据量成倍增加.为了避免产生笛卡尔积引入内联查询、左联查询、右联查询
+create table a(
+	a number
+)
+insert into a value(1);
+insert into a value(2);
+insert into a value(3);
+create table b(
+	a number,
+	b char(10)
+)
+insert into b values(1,'a');
+insert into b values(2,'b');
+insert into b values(4,'c');
+
+select * from a;
+select * from b;
+select * from a,b;--9
+
+a.内联查询
+关联列判断
+	名字相同
+	作用相同
+	主外键关系
+语法:
+	select 列 from 表1,表2 where 表1.列=表2.列;
+	select 列 from 表1 inner join 表2 on 表1.列=表2.列;
+dept
+	deptno 部门号
+	loc    部门地址
+	dname  部门名称
+例子:查询SCOTT所在的部门名称
+1.分析列
+	员工名字
+	部门名称
+2.分析表
+	员工名字  emp
+	部门名称  dept
+3.关联
+	select * from emp,dept 
+	where emp.deptno=dept.deptno;
+4.过滤
+	select dname from emp,dept 
+	where emp.deptno=dept.deptno
+	and ename='SCOTT';
+补充：子查询做出来
+select deptno from emp where ename='SCOTT';
+select dname from dept where deptno=(select deptno from emp where ename='SCOTT');
+例子:查询部门名称为SALES的员工名字和工资
+1.分析列
+	dname
+	ename
+	sal
+2.分析表
+	dept
+	emp
+3.关联
+	select * from emp e,dept d
+	where e.deptno=d.deptno;
+4.过滤
+	select e.ename,e.sal from emp e,dept d
+	where e.deptno=d.deptno
+	and d.dname='SALES';
+
+
+
+
+
+
+
+
+
+
+
+
+
