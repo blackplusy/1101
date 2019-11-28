@@ -82,6 +82,8 @@ select dname from dept where deptno=(select deptno from emp where ename='SCOTT')
 	and d.dname='SALES';
 
 
+查询员工名字以S开头的员工部门所在地?
+查询薪资高于平均水平的员工的部门名字?
 
 
 
