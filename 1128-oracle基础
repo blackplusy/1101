@@ -94,7 +94,6 @@ select d.dname from emp e,dept d
 where e.deptno=d.deptno
 and e.sal>(select avg(sal) from emp);
 
-
 --1.jpg
 select * from test1 where department='计算机系'
 and place='北京';
@@ -106,8 +105,78 @@ select t1.no,t1,name,t2.grade,t2.courses from test1 t1,test2 t2
 where t1.no=t2.no
 and t2.grade>=75;
 
+--4.jpg
+A.select s#,grade from sc where c#='C2';
+B.select sname from s where sname like 'D%';
+C.
+select s.s#,s.sname from s,sc,c
+where s.s#=sc.s#
+and sc.c#=c.c#
+and c.cname='Maths';
+D.
+select s# from sc where c# in ('C2','C4');
 
 
+--2.jpg
+a.select  s.name from student s,achievement a
+where s.id=a.id
+and a.mark>85;
+b.count()
+select count(id) from achievement where mark>=90;
+c.
+select id from student where name='Robert';
+insert into achievement values((select id from student where name='Robert'),80);
+d.
+select id from student where name='Rose';
+update achievement set mark=87 where id=(select id from student where name='Rose');
+e.
+delete achievement where id=(select id from student where name='Betty');
+delete student where name='Betty';
+
+
+左联查询、右联查询(没讲)
+2.分组查询
+按照某种属性对数据进行分类查询
+分组查询语法:
+	select 列 from 表 where 条件
+		group by 分组条件
+			having 分组后过滤条件;
+判断
+select deptno from emp group by deptno;
+select deptno,ename from emp group by deptmo;
+select * from emp group by deptno;
+a.分组函数(聚合函数)
+通常是和分组一起使用，也可以单独使用
+max()   	最大值
+min()		最小值
+avg() 		平均值
+sum()   	求和
+count()		计数
+例子:查询emp表中最高，最低，平均薪资是多少
+select max(sal),min(sal),avg(sal) from emp;
+
+b.分组查询
+通常来说每后面跟的就是分组条件
+例子:查询emp表中每个部门有多少人,要求显示部门号，人数
+select deptno,count(ename) from emp group by deptno;
+例子:查询每个部门有多少人，要求显示部门地址，部门人数
+select d.loc,count(e.ename) from emp e,dept d where e.deptno=d.deptno group by loc;
+
+c.分组后过滤
+where   	分组前过滤，后面不能直接跟分组函数
+having      分组后过滤，后面可以直接跟分组函数
+例子:查询部门人数超过5个的部门名字
+select d.loc,count(e.ename) from emp e,dept d where e.deptno=d.deptno group by loc having count(e.ename)>5;
+
+
+小总结
+查询语法:
+select 列 from 表
+	where 条件
+		group by 分组条件
+			having 分组后过滤条件
+				order by 列;
+				
 
 
 
