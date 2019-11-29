@@ -22,3 +22,84 @@ select avg(english) from mark;
 select m.math,c.name,c.address,c.telno  from cust c,mark m
 where c.studentno=m.studentno
 and c.studentno in (11,22,33,44,55)
+===========================================================================
+mongodb
+1.关系型数据库和非关系型数据库
+	关系型数据库
+		informix
+		db
+		oracle
+		mysql
+		sqlserver
+	非关系型数据库
+		mongodb
+		redis
+		Cassandra
+2.mongodb的下载和安装
+	https://www.mongodb.com/download-center
+	下载时候需要注意的点
+		community  社区版(开源)
+		enterprise 企业版(付费)
+	版本:
+		4.2
+	OS:
+		操作系统类型
+		操作系统位数
+	包：
+		msi   微软安装包
+		zip   压缩包
+	部署:
+		a.解压压缩包
+		b.设置环境变量
+			计算机---属性--高级--环境变量--系统变量--Path中添加
+			;E:\mongodb-win32-x86_64-2008plus-ssl-4.0.13\bin
+			确定---确定--确定
+3.mongodb的服务
+	mongod   mongodb的主服务
+	mongo	 mongodb的客户端服务
+	a.mongodb的服务启动
+
+	命令提示符中启动命令，前提是data目录存在
+	mongod --dbpath d:\data
+	mongod --dbpath d:\data --logpath d:\data\mongo.log
+	mongod --dbpath /data --logpath /data/mongo.log --fork
+	--dbpath  数据存放的目录(文件夹)
+	--logpath 日志存放的路径(文件)
+	--fork    后台运行
+	b.检查服务
+	检查mongodb服务
+		win+r--cmd--tasklist | find "mongod"
+		taklist  查看系统所有进程
+		|        管道，前面的输出作为后面的输入
+		find     搜索
+	检查mongodb的端口
+		mongodb默认端口27107
+		netstat -an | find "27017"
+4.mongodb的登陆(命令提示符)
+	mongo
+		登陆本地test数据库
+	mongo 127.0.0.1/admin
+		登陆IP为127.0.0.1的admin数据库
+	mongo 127.0.0.1:27017/admin
+		登陆IP为127.0.0.1的端口为27017的admin数据库
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
