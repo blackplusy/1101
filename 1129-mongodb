@@ -157,7 +157,36 @@ mongodb
 		10.空
 		db.xiyouji.find({age:{$type:2}})
 	e.in
+		在....里面，或的关系
+		db.xiyouji.find({name:{$in:['nezha','yangjian']}})
 	f.regex
+		正则表达式
+		^  以。。。开头
+		$  以。。。结尾
+		db.xiyouji.find({name:{$regex:/g$/}})
+		db.xiyouji.find({name:{$regex:/^s/}})
+9.文档的修改
+	a.修改多个所文档
+		db.xiyouji.update({wukong:18},{$set:{jingli:null}},{multi:true})
+	b.修改指定文档
+		$set
+		db.xiyouji.update({name:'shasir'},{$set:{jingli:'3句话'}})
+	c.覆盖文档
+		db.xiyouji.update({name:'shasir'},{jingli:100})
+	d.重命名
+		$rename  
+		db.xiyouji.update({name:'niumo'},{$rename:{'age':'nianling'}})
+	e.增长
+		$inc
+		整数 增加
+		复数 减少
+		db.xiyouji.update({name:'niumo'},{$inc:{nianling:10}})
+10.文档的删除
+	db.xiyouji.remove({age:{$exists:1}})
+	db.xiyouji.remove({})
+
+
+
 
 
 
