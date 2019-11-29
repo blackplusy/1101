@@ -82,7 +82,85 @@ mongodb
 		登陆IP为127.0.0.1的admin数据库
 	mongo 127.0.0.1:27017/admin
 		登陆IP为127.0.0.1的端口为27017的admin数据库
-		
+5.mongodb的基础命令
+	mysql      mongodb
+	数据库     数据库
+	表         集合
+	数据       文档
+	db  	查看当前数据库的名字
+	show databases
+	show dbs
+			查看当前有哪些数据库
+	use  local
+			数据库切换为local
+	show tables
+	show collections
+			查看当前数据库中有哪些集合
+	db.startup_log.find()
+			查看startup_log集合中所有文档
+5.CURD(增删改查)
+	a.文档的新增
+		db.xiyouji.insert({name:'tangsir',age:18})
+	b.文档的查看
+		db.xiyouji.find()
+		db.xiyouji.find({name:'shasir'})
+	c.文档的修改
+		db.xiyouji.update({name:'tangsir'},{$set:{age:999}})
+	d.文档的删除
+		db.xiyouji.remove({age:999})
+6.文档的新增
+	a.新增普通文档
+		db.xiyouji.insert({name:'小甜甜'})
+	b.新增文档指定_id
+		db.xiyouji.insert({_id:0,name:'puti'})
+	c.新增内嵌文档
+		db.xiyouji.insert({name:'5kong',jingli:{kill:100,hit:1}})
+	d.新增多个文档
+		db.xiyouji.insert([{name:'nezha'},{name:'yangjian'},{name:'tai2'}])
+
+7.文档的查看
+	a.查询所有文档
+		db.xiyouji.find()
+	b.查询文档指定属性
+		db.xiyouji.find({},{_id:0,name:1})
+	c.查询指定文档的指定属性
+		db.xiyouji.find({wukong:18},{jingli:1})
+8.查询表达式
+	https://docs.mongodb.com/manual/reference/operator/query/
+	a.比较运算符
+		$lt     小于
+		$gt     大于
+		$gte    大于等于
+		$lte    小于等于
+		$ne     不等于
+		db.xiyouji.find({age:{$gte:200}})
+		db.xiyouji.find({name:{$ne:'5kong'}})
+	b.关系运算符
+		$and   同时满足条件
+		$or    满足一个条件即可
+		$not   不满足条件
+		db.xiyouji.find({$and:[{age:{$lte:2000}},{name:'niumo'}]})
+		db.xiyouji.find({$or:[{name:'shasir'},{name:'niumo'}]})
+	c.存在性
+		$exists
+		db.xiyouji.find({name:{$exists:0}})
+	d.文件类型判断
+		$type
+		1.浮点
+		2.字符
+		3.对象
+		4.数组
+		5.二进制数据
+		7.object_id
+		8.布尔
+		9.日期
+		10.空
+		db.xiyouji.find({age:{$type:2}})
+	e.in
+	f.regex
+
+
+
 
 
 
