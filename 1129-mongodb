@@ -1,0 +1,24 @@
+--2.png
+a.select count(id) from table1;
+b.
+select  t2.学生家庭住址 from 
+table1 t1,table2 t2 where t1.id=t2.id
+and t1.姓名 like '张%'
+and t1.性别='女'
+order by t1.姓名;
+--3.png
+select * from dt_pay where salary>(select avg(salary) from dt_pay);
+select * from dt_pay;
+truncate table dt_pay;
+--4.png
+select xm,zkzh  from tb_student where score>0 and score<5;
+select * from  tb_student where xm='张三' and score=5;
+select  s.姓名,c.成绩表  from 学生表 s ,成绩表 c
+where s.准考证号=c.准考证号
+and s.年龄 between 20 and 35
+order by s.准考证号 desc;
+--5.bmp
+select avg(english) from mark;
+select m.math,c.name,c.address,c.telno  from cust c,mark m
+where c.studentno=m.studentno
+and c.studentno in (11,22,33,44,55)
