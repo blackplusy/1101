@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {padding: 0;margin: 0;}
+		.left,.right {
+			width: 200px;
+			height: 1000px;
+			position: absolute;
+		}
+		.center {
+			height: 1000px;
+			background-color: skyblue;
+		}
+		.left {
+			background: pink;
+			left:0;
+			top:0;
+		}
+		.right {
+			background: yellow;
+			right: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 圣杯布局 -->
+	<!-- 中间先加载，两边宽度固定 -->
+	<!-- 中间的内容要自适应伸缩，但不能给他宽度 -->
+	<div class="center">中间</div>
+	<div class="left">左边</div>
+	<div class="right">右边</div>
+</body>
+</html>

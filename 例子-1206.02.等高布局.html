@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*等高布局*/
+			/*1.为两个子元素提供一个非常大的padding-bottom*/
+			/*2.为两个子元素提供一个非常大的负margin-bottom（这两者的值必须一致）*/
+			/*为他们共同的父标签提供一个属性 overflow:hidden*/
+			.container {
+				overflow: hidden;
+			}
+			.left,.right {
+				width: 200px;
+				float: left;
+				padding-bottom: 1000px;
+				margin-bottom: -1000px;
+			}
+			.left {
+				background: pink;
+			}
+			.right {
+				background: skyblue;
+			}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            标题 <br />
+            标题 <br />
+            标题 <br />
+            标题 <br />
+            标题 <br />
+            标题 <br />
+            标题 <br />
+            标题 <br />
+        </div>
+        <div class="right">
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+            正文 <br />
+        </div>
+    </div>
+</body>
+</html>
